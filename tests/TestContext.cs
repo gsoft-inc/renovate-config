@@ -116,6 +116,19 @@ internal sealed class TestContext(
         await ExecuteCommand(outputHelper, "git", ["-C", this._repoPath, "push", gitUrl, DefaultBranchName + ":" + DefaultBranchName, "--force"]);
     }
 
+    public void UseRenovateFile(string filename)
+    {
+        var gitRoot = GetGitRoot();
+        var filePath = temporaryDirectory.FullPath / "renovate.json";
+
+        if (File.Exists(filePath))
+        {
+            File.Delete(filePath);
+        }
+
+        File.Copy(gitRoot / filename, filePath);
+    }
+
     public async Task RunRenovate()
     {
         var token = await GetGitHubToken(outputHelper);
@@ -130,6 +143,10 @@ internal sealed class TestContext(
                 "-e", "RENOVATE_PRINT_CONFIG=true",
                 "-e", $"RENOVATE_TOKEN={token}",
                 "-e", "RENOVATE_RECREATE_WHEN=always",
+                "-e", "RENOVATE_PR_HOURLY_LIMIT=0",
+                "-e", "RENOVATE_PR_CONCURRENT_LIMIT=0",
+                "-e", "RENOVATE_BRANCH_CONCURRENT_LIMIT=0",
+                "-e", "RENOVATE_LABELS=[\"renovate\"]",
                 "-e", "RENOVATE_INHERIT_CONFIG_FILE_NAME=not-renovate.json",
                 "-e", "RENOVATE_REPOSITORIES=[\"https://github.com/gsoft-inc/renovate-config-test\"]",
                 "--pull", "always",

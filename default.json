@@ -62,25 +62,6 @@
       ]
     },
     {
-      "description": "Automatically merge minor and patch updates for Microsoft and trusted, well-known dependencies",
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "automergeType": "branch",
-      "matchPackageNames": [
-        "dotnet-sdk",
-        "mcr.microsoft.com/dotnet/sdk",
-        "mcr.microsoft.com/dotnet/aspnet",
-        "mcr.microsoft.com/dotnet/runtime",
-        "mcr.microsoft.com/dotnet/runtime-deps",
-        "/^Azure\\.Identity$/i",
-        "/^Microsoft\\./i",
-        "/^System\\./i",
-        "/^coverlet\\.collector$/i",
-        "/^xunit(\\.|$)/i",
-        "/^MongoDB\\./i"
-      ]
-    },
-    {
       "groupName": "gitversion-msbuild",
       "description": "Disable major updates as their are breaking changes. The documentation is not complete, so it would require time to figure out the new configuration",
       "matchPackageNames": [
@@ -110,6 +91,15 @@
       "matchPackageNames": [
         "/^Microsoft\\./i",
         "/^System\\./i"
+      ],
+      "extends": [
+        ":separateMajorReleases"
+      ]
+    },
+    {
+      "groupName": "workleap",
+      "matchPackageNames": [
+        "/^[wW]orkleap\\./"
       ],
       "extends": [
         ":separateMajorReleases"

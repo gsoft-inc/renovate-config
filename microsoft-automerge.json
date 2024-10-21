@@ -1,0 +1,22 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "microsoft",
+      "matchPackageNames": [
+        "dotnet-sdk",
+        "mcr.microsoft.com/dotnet/sdk",
+        "mcr.microsoft.com/dotnet/aspnet",
+        "mcr.microsoft.com/dotnet/runtime",
+        "mcr.microsoft.com/dotnet/runtime-deps",
+        "/^Azure\\.Identity$/i",
+        "/^Microsoft\\./i",
+        "/^System\\./i"
+      ],
+      "extends": [
+        ":automergeBranch",
+        ":automergeMinor"
+      ]
+    }
+  ]
+}

@@ -74,3 +74,16 @@ steps:
   parameters:
     githubToken: $(GITHUB_COM_TOKEN)
 ````
+
+## System tests
+In order to run the system tests you will need the `workflow` scope on this repository.
+
+To request this scope you can run the following command in your CLI
+```
+gh auth login --scopes workflow
+```
+
+If you do not have this scope, you will run into the following error
+```
+! [remote rejected] main -> main (refusing to allow an OAuth App to create or update workflow `.github/workflows/ci.yml` without `workflow` scope)
+```

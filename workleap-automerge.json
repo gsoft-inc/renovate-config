@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "workleap",
+      "matchPackageNames": [
+        "/^[wW]orkleap\\./"
+      ],
+      "extends": [
+        ":automergeBranch",
+        ":automergeMinor"
+      ]
+    }
+  ]
+}
