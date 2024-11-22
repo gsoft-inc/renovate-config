@@ -27,7 +27,7 @@ There are multiple configurations you can extend to enable auto-merge on differe
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "github>gsoft-inc/renovate-config"
+    "github>gsoft-inc/renovate-config",
     "github>gsoft-inc/renovate-config//microsoft-automerge.json",
     "github>gsoft-inc/renovate-config//workleap-automerge.json",
     "github>gsoft-inc/renovate-config//dotnet-trusted-thirdparty-dependencies-automerge.json",
