@@ -11,7 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CliWrap" Version="3.7.1" />
+    <PackageReference Include="CliWrap" Version="3.8.0" />
     <PackageReference Include="GitHub.Octokit.SDK" Version="0.0.31" />
     <PackageReference Include="Markdig" Version="0.40.0" />
     <PackageReference Include="Meziantou.Framework.FullPath" Version="1.0.15" />
