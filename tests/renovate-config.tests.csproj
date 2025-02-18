@@ -19,7 +19,7 @@
     <PackageReference Include="Meziantou.Framework.TemporaryDirectory" Version="1.0.10" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageReference Include="Octokit" Version="14.0.0" />
-    <PackageReference Include="Workleap.DotNet.CodingStandards" Version="1.0.0">
+    <PackageReference Include="Workleap.DotNet.CodingStandards" Version="1.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
